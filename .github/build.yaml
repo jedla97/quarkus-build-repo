@@ -28,7 +28,7 @@ jobs:
           git clone --branch ${{ github.event.inputs.branch }} ${{ github.event.inputs.url }} && cd quarkus && ./mvnw -B -s .github/mvn-settings.xml clean install -Dquickly -Dno-test-modules -Prelocations
       - name: Tar Maven Repo
         shell: bash
-        run: zip -r maven-repo.zip ~/.m2/repository
+        run: zip -r maven-repo.zip ~/.m2/repository/io
       - name: Persist Maven Repo
         uses: actions/upload-artifact@v4
         with:
